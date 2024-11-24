@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background: linear-gradient(135deg, #d191e8, #e1b6f1);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 60dvh;
+            width: 50dvw;
+            text-align: center;
+            background: rgb(48, 28, 76);
+            padding: 2rem 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+        .go-home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            padding: 0.9rem;
+            font-size: 1.1rem;
+            background: #8a41a4;
+            color: #fff;
+            margin-inline: 34%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .go-home:hover {
+            background: #d191e8;
+            transform: scale(1.05);
+        }
+        .error-message {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404 - Page Not Found</h1>
+        <p class="error-message"><%= error %></p>
+
+        <% if (isShortcodeError) { %>
+            <p>It seems like the shortcode you entered doesn't exist. Please check the URL and try again.</p>
+        <% } else { %>
+            <p>The path you tried to access doesn't exist. Please check the URL or use the button below to return home.</p>
+        <% } %>
+
+        <a href="/" class="go-home">Go Back to Home</a>
+    </div>
+</body>
+</html>
